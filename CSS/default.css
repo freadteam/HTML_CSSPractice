@@ -1,0 +1,32 @@
+/*
+セレクタ {プロパティ:値;}
+*ユニバーサルセレクタ
+要素名 p h1 div
+#id
+.class
+*/
+
+/*
+a, b：複数のセレクタに同じccssを適用
+a b：aの下の階層にあるb全てにcssを適用
+a > b：aの直下にあるbだけに適用
+a + b： aの次にあるb要素に適用
+ab：aであってなおかつb要素であるものに適用　
+*/
+#test1 #first {color: red;}
+#test1 .points {color: blue;}
+
+/*div span { color: skyblue; }
+p + p { color: skyblue; }*/
+/*p.points { color: skyblue; }*/
+
+/*属性セレクタ*/
+/*titleがあるaにのみ適用*/
+/*#test3 a[title] {color:red;}*/
+#test2 a[href="https://www.google.co.jp/"] {color:orange;}
+/*class属性にsearchが含まれているもの
+~=って動画で言ってるけど*=じゃないとできない
+*/
+#test2 a[class*="search"] {color:red;}
+
+
