@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<!--言語を日本語にするよ--> 
+<html lang="ja">
+	<head>
+		<!--文字コードの指定-->
+		<meta charset="utf8">
+		<!-- 検索結果に反映される -->
+		<meta name="description" content="文章の説明">
+		<title>HTMLの練習メモ</title>
+			<!-- faviconの設定 -->
+		<link rel="shortcut icon" href="favicon.ico"><!-- relは属性、hrefは参照先 -->
+	</head>
+	<body>
+		<article>
+			<h1>でかい見出し</h1>
+				<p>段落</p>
+				<p><strong>強調</strong>するぜ！！！</p>
+				<p>改行<br>するぜ！！！！</p>
+				<p class="spanClass">範囲を<span>指定</span>できるぜ！！！</p>
+				<a href="https://www.yahoo.co.jp/">同ページでリンクに飛ぶ</a>
+				<a href="https://www.yahoo.co.jp/" target="_blank">別タグでリンクに飛ぶ</a>
+				<a href="index2.html">別ファイルに飛ぶ</a>
+				<a href="#h3Id">ページ内リンク</a><!-- 指定するのはid -->
+				<img src="uploads/26145_13_4.jpg" width="100" height="100" alt="画像が表示できない時にでる">
+		</article>
+
+		<aside>
+			<h2>次にでかい見出し</h2>
+				<ul>
+					<li>黒点の箇条書き</li>
+					<li>黒点の箇条書き</li>
+				</ul>
+				<ol>
+					<li>数字の箇条書き</li>
+					<li>数字の箇条書き</li>
+				</ol>
+				<dl>
+					<dt>定義</dt>
+					<dd>こういう風に定義します</dd>
+				</dl>
+		</aside>
+
+		<section>
+			<table>
+				<thead>
+					<tr><!--th: table row-->
+						<th>Size</th><th>Price</th><!--th: table header-->
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>S</td><td>100</td><!--th: table data-->
+					</tr>
+					<tr>
+						<td>M</td><td>150</td>
+					</tr>
+					<tr>
+						<td>L</td><td>180</td>
+					</tr>	
+					<tr>
+						<td colspan="2">列を連結！</td>
+					</tr>				
+				</tbody>
+			</table>
+		</section>
+
+		<article>
+			<div class="testClass">
+				<h3 id="h3Id">三番目の大きさ</h3>
+					<p>段落</p>
+					<hr>
+					<p>話題転換</p>
+					<pre>改行や字下げを保持
+						test
+							test
+								test
+					</pre>
+					<blockquote>引用するぜ</blockquote>
+					</div>
+		</article>
+
+		<article>
+			<h1>フォーム</h1>
+				<form action="survey.php" method="post" ><!-- novalidateを足すとrequiredとかをシカトできる -->
+					<p>メールアドレス: <input type="email" name="email" required></p>
+					<p>メールアドレス2: <input type="text" name="email" size="50" maxlength="5" value="abc"></p>
+					<p>料金: <input type="number" name="price" size="50" ></p>
+					<p>誕生日: <input type="date" name="birthday" size="50" ></p>
+					<!-- typeのemail, numebr, dateなどはHTML５から追加されたので未対応ブラウザも多い。セキュリティの観点からもあまり頼らないほうがいい.
+					 -->
+					<p>パスワード: <input type="password" name="password" size="50" placeholder="please enter password"></p>
+				<!-- hiddenは表示させずに送信時、一緒に何かを送信したい時に使う（今回は1234というuser_idを送信） -->
+					<input type="hidden" name="user_id" value="1234"> 
+					<p><input type="submit" value="送信!!"></p>
+
+					<p>disabled: <input type="text" name="email" disabled></p>
+					<p><input type="submit" value="disabled" disabled></p>
+					<hr>
+			</form>
+		</article>
+
+		<article>
+			<form action="survey.php" method="post">
+				<p>
+				コメント：
+				<textarea name="comment" cols="40" rows="5">コメント</textarea>
+				</p>
+				<p>
+					<button type="submit"><strong>送信！！！</strong></button>
+				</p>
+				<p>
+					<button type="button">処理をする(JSがいる)</button>
+				</p>
+			</form>
+		</article>
+
+
+		<article>
+			<h1>checkboxや</h1>
+				<p>
+				Phone: 
+				<input type="checkbox" name="phone" value="android"> Android
+				<input type="checkbox" name="phone" value="iPhone" checked> iPhone
+				</p>
+			<h1>radioや</h1>
+				<p>
+				Phone: 
+				<input type="radio" name="color" value="red"> Red
+				<input type="radio" name="color" value="blue" checked> Blue
+				</p>
+			<h1>labelや</h1>
+				<p>
+				Phone: 
+				<label><input type="checkbox" name="phone" value="android"> Android</label>
+				<input type="checkbox" name="phone" value="iPhone" checked id="iPhone"> <label for ="iPhone">iPhone</label><!-- フォームとlabelが離れている時 -->
+				</p>
+		</article>
+
+		<article>
+			<h4>selectタグや</h4>
+				<p>City:
+					<select name="city"><!-- 送信する時,
+						cityって名前で送る -->
+						<option value="tokyo"> Tokyo</option>
+						<option value="osaka"> Osaka</option>
+						<option value="hukuoka"> Hukuoka</option>
+						<option value="tsendai"> Sendai</option>
+						<option value="okinawa" selected> Okinawa</option>
+					</select>
+				</p> 
+			<h6>複数選択や</h6>
+				<p>City:
+					<select name="city" multiple size="5"><!-- 送信する時,
+						cityって名前で送る -->
+						<option value="tokyo"> Tokyo</option>
+						<option value="osaka"> Osaka</option>
+						<option value="hukuoka"> Hukuoka</option>
+						<option value="tsendai"> Sendai</option>
+						<option value="okinawa" selected> Okinawa</option>
+					</select>
+				</p> 
+		</article>
+
+		<article>
+			<h1>文字参照（普通は使えない文字を使えるようにする）</h1>
+				<p>「&lt;p&gt;タグは段落する」</p></p>
+				<input type="text" value="区切り文字は&quot;">
+				「この記号の文字参照は&amp;quot;です」
+		</article>
+
+	</body>
+
+	<footer>
+	</footer>
+</html>
+
+<!-- タグ：<タグ>文章</タグ>
+属性：<タグ 属性名=値>文章</タグ> -->
+
+<!-- 
+id: １つしかない要素
+class: 複数ある要素（複数持てる、スペースあけて書く）
+style: スタイルを直で指定できる（普通は別ファイルで書く）
+ -->
+
+<!--
+sessionについて
+header:
+footer:
+nav:ナビゲーション
+article:独立してるコンテンツ（それ単体を配信しても問題ないやつ）
+aside:副次的なコンテンツ（補足情報、広告など）
+section:それ以外の情報の塊（何らかの見出しを整理して情報を整理したいときなど）
+h1-h6:見出し
+-->
+
+<!-- p:段落
+hr:水平線（話題転換など）
+pre:字下げや改行を保持
+blockqupte:引用
+div:スタイリング(CSSで使うイメージ) -->
+
+<!-- form
+	action: どこに送るか？
+	method: get/post
+input
+	text
+	submit
+	password
+	hidden
+
+	checkbox：複数選択
+	radio：１つだけ選ばす
+	label:設定したlabelを押すだけで選択できる
+ -->
+
+<!-- 
+タグ
+	W#Cサイトをみて
+	カテゴリー：どの分類か？
+	コンテンツモデル：どのカテゴリーのタグを入れられるか？
+	トランスペアレント：親要素のコンテンツモデルを使ってね
+ -->
