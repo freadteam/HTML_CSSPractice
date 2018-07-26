@@ -1,0 +1,136 @@
+/*ブラウザには標準で組み込まれているスタイルシート（user agent stylesheet）があって、何もしないと、このように h1 は太字になったりだとか、適当な余白が付いていたりだとか、良い感じのスタイルがあてられている。*/
+/*↓どのブラウザでも綺麗に移すように調整する。
+reset.cssは全て消す、normalize.cssはいいとこだけ残す*/
+
+body {
+	/*bodyの背景色をfooterと同じにすることで、footerの色を下まで伸ばすように見せられる*/
+	/*background: slategray;*/
+}
+
+header {
+	background: tomato;
+}
+
+main {
+	background: skyblue;
+}
+
+/*中心に寄せる*/
+.container {
+	width: 500px;
+	/*auto: 真ん中揃え*/
+	margin: 0 auto;
+	/*background: pink;*/
+}
+/*	box-sizing: border-box;→widthがborderやpaddingを含めた値になる
+*/
+/*#left, #right {
+	padding: 10px;
+	box-sizing: border-box;
+}*/
+/*
+#left {
+	background: limegreen;
+	float: left;
+	width: 100px;
+}
+
+#center {
+	background: seagreen;
+	float: left;
+	width: 300px;
+
+}
+
+#right {
+	background: lightgreen;
+	float: left;
+	width: 100px;
+}*/
+
+
+#test1 #left {
+	background: limegreen;
+	float: left;
+	width: 100px;
+	margin-right: 10px;
+}
+
+#test1 #center {
+	background: seagreen;
+	float: left;
+	width: 280px;
+}
+
+#test1 #right {
+	background: lightgreen;
+	float: right;
+	width: 100px;
+}
+
+/*.clearfix:after {
+	content: '';
+	display: block;
+	clear: both;
+}*/
+
+#test1 .clear {
+	overflow: hidden;
+}
+
+#test2 #left2 {
+	background: red;
+	float: left;
+	width: 20%;
+}
+
+#test2 #center2 {
+	background: blue;
+	float: left;
+	width: 60%;
+}
+
+#test2 #right2 {
+	background: green;
+	float: left;
+	width: 20%;
+}
+#test2 .clear {
+	overflow: hidden;
+}
+
+#test2 #left3 {
+	background: red;
+	float: left;
+	width: 100px;
+}
+
+#test2 #center3 {
+	background: blue;
+	margin:0 100px;
+}
+
+#test2 #right3 {
+	background: green;
+	float: right;
+	width: 100px;
+}
+
+
+
+footer {
+	clear: both;
+	background: slategray;
+}
+
+/*背景画像を横いっぱいにする
+新宿の中心はデファオルトで左上、今回は真ん中ちょい上に設定
+*/
+#test1 #eyecatch{
+	background: url(main.jpg) no-repeat;
+	background-size: cover;
+	background-position: 50% 20%;
+	height: 100px;
+}
+
+

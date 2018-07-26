@@ -1,0 +1,65 @@
+_/*ブラウザには標準で組み込まれているスタイルシート（user agent stylesheet）があって、何もしないと、このように h1 は太字になったりだとか、適当な余白が付いていたりだとか、良い感じのスタイルがあてられている。*/
+/*↓どのブラウザでも綺麗に移すように調整する。
+reset.cssは全て消す、normalize.cssはいいとこだけ残す*/
+
+body {
+	/*bodyの背景色をfooterと同じにすることで、footerの色を下まで伸ばすように見せられる*/
+	/*background: slategray;*/
+}
+
+/*中心に寄せる*/
+.container {
+	width: 500px;
+	/*auto: 真ん中揃え*/
+	margin: 0 auto;
+	/*background: pink;*/
+}
+
+
+header {
+	background: tomato;
+}
+
+main {
+	background: skyblue;
+	padding: 15px 0;
+}
+ul#lessons {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+ul#lessons h2, ul#lessons p {
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+}
+
+ul#lessons .lesson_img {
+	float: left;
+	width: 50px
+}
+
+ul#lessons .lesson_info {
+	float: right;
+	width: 440px;
+}
+
+ul#lessons li {
+	overflow: hidden;
+}
+
+ul#lessons li:not(:last-child) {
+	overflow: hidden;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.4)
+}
+
+footer {
+	clear: both;
+	background: slategray;
+}
+
+

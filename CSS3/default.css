@@ -1,0 +1,109 @@
+/*
+値
+ -長さ
+  -px, em, %, rem （倍）
+  rem: htmlの大きさを基準とする;
+*/
+
+
+/*
+色
+-rgba
+-hsl/hsla
+ - Hue：色相,0-360
+ -Saturation 0-100%
+ - lightness: 0^100%;
+ -Alpha
+*/
+.box {
+	width: 100px;
+	height: 50px
+}
+
+#box1 {
+	background-color: rgb(255, 100, 100);
+}
+#box2 {
+	background-color: rgba(255, 100, 100, 0.2);
+}
+#box3 {
+	background-color: hsla(210, 100%, 50% ,.2);
+	/*色相、鮮やかさ、明るさ、透明度*/
+}
+#box4 {
+	background-color: hsla(210, 100%, 30% ,.2);
+	/*色相、鮮やかさ、明るさ、透明度*/
+}
+/*透明：opacity:要素全体の透明度*/
+#test1 img {
+	border: 7px solid blue;
+	width: 200px;
+	opacity: 0.3;
+}
+
+/*属性セレクタ
+- a[href]
+- a[href="foo"]
+- a[href~="foo"]
+- a[href^="foo"] fooから始まる
+- a[href$="foo"] fooで終わる
+- a[href*="foo"] fooを含む
+*/
+/*#test2 a[href^="http"]{color: orange;}
+*/#test2 a[href$=".com/"]{color: orange;}
+
+/*
+擬似クラス
+- first-child
+*/
+/* #test3 li:last-child {
+ 	background: violet;
+}*/
+/* #test3 li:nth-child(3) {
+ 	background: violet;
+}*/
+/*nth-child→数字で指定、even:偶数、odd：奇数、n：n番目
+*/ /*#test3 li:nth-child(3n+1) {
+ 	background: violet;
+}*/
+/*最後から何番目
+*/#test3 .class1 li:nth-last-child(4) {
+ 	background: violet;
+}
+/*子要素が１つだけの時*/
+#test3 li:only-child {
+	background: violet;
+}
+/*#test3 p:first-of-type */
+/*#test3 p:last-of-type */
+/*#test3 p:nth-of-type(3)*/
+/*#test3 p:nth-last-of-type(4)*/
+#test3 h2:only-of-type /*h2が一個だけの時*/
+{
+	background: violet;
+}
+
+/*not(x): x以外の要素*/
+/*.div1 li:not(.target)*/
+/*空要素*/
+/*.div1 li:empty*/
+/*.div1 input[type="text"]:enabled*/
+
+.div1 input[type="checkbox"]:checked + label
+{
+	background: violet;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

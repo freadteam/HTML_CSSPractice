@@ -1,0 +1,223 @@
+/*
+角丸
+*/
+
+#test1 div {
+	width: 200px;
+	height: 200px;
+	background: skyblue url(main.jpg);
+/*	border-radius: 30px;*/
+/*楕円*/
+	/*border-radius: 30px / 15px;*/
+	/*border-radius: 30px 40px 10px;*/
+	border-radius: 50%
+}
+
+ header {
+	width: 100%;
+	height: 130px;
+	background: /*url(main.jpg) no-repeat 0 0, */
+	url(1.jpg) no-repeat 30px 30px,
+	url(2.jpg) no-repeat bottom right;
+	 skyblue;
+	/*background-size: 50%*/
+	/*background-size: 50% 100%*/
+/*	cover:画像の縦横比を維持しつつ、背景領域を常にカバーする。サイズによってはいらない部分が切り取られる
+*/	/*background-size: cover;*/
+/*常に画像の縦横比を維持しつつ、画像全体を表示する
+*/	/*background-size: contain;*/
+/*haitibasyo */
+/*background-position: 50% 50%;*/
+}
+
+/*
+線形グラデーション
+*/
+#test2 div {
+	width: 200px;
+	height: 200px;
+/*	background-image: linear-gradient(skyblue, blue);*/
+/*background-image: linear-gradient(to top left, skyblue, blue);
+}*/
+/*background-image: linear-gradient(lightgreen,skyblue, blue);
+*/
+/*background-image: linear-gradient(lightgreen 10%, skyblue 70%, blue);
+*/
+background-image: repeating-linear-gradient(lightgreen, skyblue 20px);
+}
+/*円形グラディエーション*/
+#test2 .circle {
+	width: 200px;
+	height: 200px;
+	/*background-image: radial-gradient(skyblue, blue);*/
+	/*background-image: radial-gradient(at 30px 40px, skyblue, blue);*/
+/*	background-image: radial-gradient(20px at 30px 40px, skyblue, blue);
+*/
+	background-image: radial-gradient(farthest-side at 30px 40px, skyblue, blue);
+}
+
+/*
+影
+box-shadow
+text-shdow
+*/
+
+#test3 h1 {
+	background: #eee;
+}
+#test3 div {
+	width: 200px;
+	height: 100px;
+	background: blue;
+	/*横、縦、ぼかし始める位置、大きさ(マイナスあり)*/
+	box-shadow: 10px 20px 4px 10px black inset,
+	10px 20px 4px 10px skyblue;
+}
+
+#test3 h1 {
+	text-shadow: 3px 4px 2px black,
+	10px 20px 4px skyblue;
+}
+/*
+変形
+*/
+
+/*
+ベンダープレフィックス
+-moz-
+-o-
+-webkit-
+-ms-
+*/
+
+#test4 div {
+	width: 100px;
+	height: 100px;
+	margin-top: 20px;
+	position: absolute;
+	top: 100px;
+	left: 100px;
+}
+#test4 #box1 {
+	background: skyblue;
+	opacity: .5;
+}
+#test4 #box2 {
+	background: orange;
+	opacity: .5;
+/*	transform: translate(20px,40px);
+*/	/*transform: translateX(20px);*/
+/*	transform: scale(0.5, 1.5);*/
+	/*transform: skew(10deg, 20deg);*/
+/*ベンダープレフィックス*/
+	-webkit-transform: rotate(30deg);
+/*ベンダープレフィックス以外*/
+	transform: rotate(30deg);
+	transform-origin:  top left;
+}
+
+/*
+transition
+- transition-timing-function
+	- ease
+	- linear
+	- ease-in
+	- ease-out
+	- ease-in-out
+*/
+#test5 div {
+width: 100px;
+height:50px;
+background: skyblue;
+
+/*transition-property: all;
+transition-duration: 2s;
+transition-timing-function: ease; 
+transition-delay: 0.8s: */
+transition: all 2s ease 0.8s;
+}
+
+#test5 div:hover {
+width: 200px;
+height:50px;
+background: blue;
+}
+
+/*
+animation
+*/
+#test6 div {
+width: 100px;
+height:50px;
+background: skyblue;
+-webkit-animation-name: slidein;
+-webkit-animation-duration: 1s;
+-webkit-animation-timing-function: ease;
+-webkit-animation-delay: 0.1;
+/*繰り返し*/
+-webkit-animation-iteration-count: infinite;
+/*戻るときの挙動*/
+-webkit-animation-direction: alternate;
+}
+/*animationの状態*/
+@-webkit-keyframes slidein {
+	/*始まった瞬間*/
+	0%{
+	margin-left: 100%;
+	background: white;
+	}
+	70%{
+	margin-left: 50%;
+	background: blue;	
+	}
+	/*終わった*/
+	100%{
+	margin-left: 0%;	
+	}
+}
+
+/*
+width/height
+- box-sizing→計算せずに適用できる
+*/
+#test7 {
+	margin: 0;
+	padding: 0;
+}
+
+#test7 .container {
+width: 320px;
+height:100px;
+background: skyblue;
+}
+
+#test7 .container .box {
+	box-sizing: border-box;
+	width: 100px;
+	height:100px;
+/*	width: 80px;
+	height:70px;*/
+	background: #eee;
+	float: left;
+
+	padding: 10px;
+	border-bottom: 30px solid #ccc;
+}
+
+#test7 .container .box + .box {
+	margin-left:10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

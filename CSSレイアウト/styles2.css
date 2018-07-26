@@ -1,0 +1,85 @@
+/*ブラウザには標準で組み込まれているスタイルシート（user agent stylesheet）があって、何もしないと、このように h1 は太字になったりだとか、適当な余白が付いていたりだとか、良い感じのスタイルがあてられている。*/
+/*↓どのブラウザでも綺麗に移すように調整する。
+reset.cssは全て消す、normalize.cssはいいとこだけ残す*/
+
+body {
+	/*bodyの背景色をfooterと同じにすることで、footerの色を下まで伸ばすように見せられる*/
+	/*background: slategray;*/
+}
+
+/*中心に寄せる*/
+.container {
+	width: 500px;
+	/*auto: 真ん中揃え*/
+	margin: 0 auto;
+	/*background: pink;*/
+}
+
+ul #menu {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	font-size: 0;
+}
+
+ul#menu > li {
+	display: inline-block;
+}
+
+ul#menu > li > a {
+	display: inline-block;
+	width: 80px;
+	height: 40px;
+	background: orange;
+	font-size: 16px;
+	text-decoration: none;
+	text-align: center;
+	line-height: 40px
+}
+
+ul#menu > li > a:hover {
+	opacity: 0.5;
+	transition: 0.8s;
+}
+
+header {
+	background: tomato;
+}
+
+img {
+	width: 200px;
+}
+
+main .product {
+	position: relative;
+	display: inline-block;
+}
+
+main .price {
+	position: absolute;
+/*	top: 0;
+	right: 0;*/
+	top: -5px;
+	right: -5px;
+	font-size: 10px;
+	padding: 4px;
+	font-weight: bold;
+	background: white;
+}
+
+
+
+
+
+
+main {
+	background: skyblue;
+	padding: 15px 0;
+}
+
+footer {
+	clear: both;
+	background: slategray;
+}
+
+

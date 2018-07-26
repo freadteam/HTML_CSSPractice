@@ -15,18 +15,63 @@ ab：aであってなおかつb要素であるものに適用　
 */
 #test1 #first {color: red;}
 #test1 .points {color: blue;}
-
-/*div span { color: skyblue; }
+/*
 p + p { color: skyblue; }*/
 /*p.points { color: skyblue; }*/
 
 /*属性セレクタ*/
 /*titleがあるaにのみ適用*/
-/*#test3 a[title] {color:red;}*/
+/*#test2 a[title] {color:red;}*/
 #test2 a[href="https://www.google.co.jp/"] {color:orange;}
-/*class属性にsearchが含まれているもの
-~=って動画で言ってるけど*=じゃないとできない
+/*class属性がスペース区切りであり、searchを含む
 */
-#test2 a[class*="search"] {color:red;}
+#test2 a[class~="search"] {color:red;}
+
+/*
+擬似クラス：ある要素の状態を指定
+*/
+#test3 ul li:first-child {color: red;}
+/*この順番で指定する*/
+/*リンクに未訪問*/
+#test3 p a:link {color: violet;}
+/*リンクに行ったことがある*/
+#test3 p a:visited {color: orange;}
+/*マウスが乗った時*/
+#test3 p a:hover {color: pink;}
+/*マウスをクリックした時*/
+#test3 p a:active {color: red;}
+/*フォーム選択時に青くする*/
+input:focus {background: skyblue;}
+
+/*
+擬似要素：ある要素の一部を指定
+*/
+#test3 p:first-line {color: pink;}
+#test3 div p:first-letter {color: red;}
+
+#test3 p:before {
+	content: "-->";
+}
+#test3 p:after {
+	content: "<--";
+}
+/*
+セレクタ
+詳細度
+a) style=""(htmlに書く)
+b) id
+c) 属性/擬似クラス
+d) 要素/擬似要素
+!importantで詳細度 優先できるけどおすすめしない
+同じ詳細度なら後に書いたやつが反映
+*/
+/*0, 0, 0, 1*/
+#test3 div a {color: skyblue}
+/*0, 0, 1, 1*/
+#test3 .link {color: pink}
+/*0, 0, 1, 1*/
+#test3 .search {color: orange}
+/*0, 1, 0, 1*/
+#test3 #site {color: red}
 
 

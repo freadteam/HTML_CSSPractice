@@ -1,0 +1,188 @@
+/*
+値
+- 長さ
+ - px
+ - em 親用に対してem倍
+ - % 親用に対して何%
+- 色
+ - 名前
+ - RGB
+ - Red 0-f/ 00-ff / 0-255 /0% -100%
+ - Grenn
+ - Blue
+*/
+body {font-size: 16px;}
+#test1 h1 {font-size: 2em;} /*32px*/
+#test1 h2 {font-size: 150%;} /*24px*/
+#test1 h1 {color: blue;}
+/*h1 {color: #00f;}
+h1 {color: #0000ff;}
+h1 {color: rgb(0, 0, 255);}
+h1 {color: rgb(0%, 0%, 1000%);}*/
+
+/*
+ボックスモデル
+*/
+body, html {height: 100%;}
+#test2 {
+	background: silver;
+	/*width: 200px;*/
+	/*height: 100px;*/
+	width: 50%;
+	/*高さは親要素の高さを明示的に示す必要がある*/
+	height: 10%;
+}
+
+#test3 {
+/*	border-color: orange;
+	border-width: 4px;
+	border-style: dotted;*/
+	/*border-style -> solid, dotted, dashed, double, inset, outset*/
+	border: orange 4px dotted;
+}
+
+body {margin: 0;}
+
+/*
+marginの相殺：隣り合うboxのmarginはでかい方のみ適用される
+*/
+
+/*
+cursor
+*/
+#test5 .help {cursor: help;}
+#test5 .drag{cursor: move;}
+#test5 .clickme {cursor: pointer;}
+#test5 .smile {cursor: url('test.png'), auto;}
+
+/*
+要素の配置
+display
+- block
+- inline
+- list-item
+- inline-block
+- none
+*/
+#test6 h1, #test6 p, #test6 span, #test6 a {
+	border: 1px solid #ddd;
+}
+
+#test6 h1, #test6 p {
+/*	display: inline; ←withの指定は不可なのでinline-boxを使う
+*/	display: inline-block;
+width: 160px
+}
+#test6 span {
+	display: none;
+}
+
+/*table*/
+.container {
+	display: table;
+	width: 300px
+}
+.box {
+	display: table-cell;
+	width: 100px;
+}
+.gray {background-color: gray}
+.silver {background-color: silver;}
+.orange { background-color: orange }
+
+/*
+position
+	static：初期値
+	relative：staticからずらす時
+	fixed：スクロースリしても位置を固定、基準点はwindowの左上
+	absolute：親要素の配置によって基準点が変わる
+	親要素がstaticならwindowの左上、static以外なら親要素の左上
+*/
+
+#box1 {width: 100px; height: 50px; background-color: red;}
+#box2 {width: 100px; height: 50px; background-color: silver;}
+#box3 {width: 50px; height: 25px; background-color: blue;}
+
+#box1 {background-color: red;
+position: relative;
+top: 10px;
+left: 10px;
+}
+#box2 {background-color: silver;
+	position: relative;
+}
+#box3 {background-color: blue;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+
+/*
+z-index
+- positon, static以外の値に有効
+- 値が大きいほど上に来る
+
+overflow
+ block要素の中のコンテンツがその幅と高さを超えた時にどう表示するかを決めている
+
+*/
+
+#box4, #box5, #box6 {
+	width: 100px;
+	height: 50px;
+	position: absolute;
+/*	overflow: hidden;
+*/	overflow: scroll;
+}
+#box4 {background-color: red;
+	top: 10px;
+	left:10px;
+	z-index: 3;
+}
+#box5 {background-color: silver;
+	top: 20px;
+	left:20px;
+	z-index: 1;
+}
+#box6 {background-color: blue;
+	top: 30px;
+	left:30px;
+	z-index: 2;
+}
+
+/*line-height：行の高さを指定する
+vertical-align：画像の縦位置決め
+→baseline, tip, bottom, middle, px, em
+*/
+#test7 {
+	border: 1px solid #ddd;
+	font-size: 18px;
+/*	line-height: 24px;
+*/	line-height: 1.5;
+}
+
+/*
+float：witdhも一緒に指定する
+clear：block level要素にのみ適用
+*/
+#test8 h1, #test8 h2, #test8 p, #test8 img {
+	border: 1px solid #ddd;
+}
+
+img {
+	float: right;
+	width: 200px
+}
+
+#test8 h2 {
+	clear: right;
+}
+
+
+
+
+
+
+
+
+

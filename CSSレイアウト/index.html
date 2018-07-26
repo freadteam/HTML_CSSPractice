@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>CSS Layout  Practice</title>
+	<!-- <link rel="stylesheet" href="reset.css">  -->
+	<link rel="stylesheet" href="normalize.css">
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<header>
+		<div class="container">
+			header
+		</div>
+	</header>
+	<div id="">
+		eyecatch
+	</div>
+	<main>
+		<article id="test1">
+			<div class="container clear">
+				<div id="left">Left</div>
+				<div id="center">Center</div>
+				<div id="right">Right</div>
+			</div>
+		<!-- <div style="clear: both;"></div> -->
+		</article>
+
+		<article id="test2">
+			<h1>可変カラム</h1>
+			<div class="clear">
+				<div id="left2">Left</div>
+				<div id="center2">Center</div>
+				<div id="right2">Right</div>
+			</div>
+			<h1>真ん中だけ可変</h1>
+			<!-- float要素はそうでない要素より先に書く！！！！ -->
+				<div id="left3">Left</div>
+				<div id="right3">Right</div>
+				<div id="center3">Center</div>
+		</article>
+	</main>
+	<footer>
+		<div class="container">
+			footer
+		</div>
+	</footer>
+
+</body>
+</html>
